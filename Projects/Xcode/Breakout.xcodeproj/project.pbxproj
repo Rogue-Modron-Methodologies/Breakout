@@ -10,6 +10,7 @@
 		2BB662E41D8DEFC800DD4B24 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2BB662E31D8DEFC800DD4B24 /* ResourcePath.mm */; };
 		2BB662E71D8DEFC800DD4B24 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BB662E61D8DEFC800DD4B24 /* main.cpp */; };
 		2BB662F71D8DF29600DD4B24 /* Frameworks in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB662F61D8DF29600DD4B24 /* Frameworks */; };
+		2BB662F91D8DFF8A00DD4B24 /* rab.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB662F81D8DFF8A00DD4B24 /* rab.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		2BB662E51D8DEFC800DD4B24 /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		2BB662E61D8DEFC800DD4B24 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../main.cpp; sourceTree = "<group>"; };
 		2BB662F61D8DF29600DD4B24 /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Frameworks; path = ../Frameworks; sourceTree = "<group>"; };
+		2BB662F81D8DFF8A00DD4B24 /* rab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rab.png; path = ../../../Resources/rab.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		2BB662E81D8DEFC800DD4B24 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2BB662F81D8DFF8A00DD4B24 /* rab.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -134,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BB662F91D8DFF8A00DD4B24 /* rab.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

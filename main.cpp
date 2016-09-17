@@ -14,8 +14,8 @@ int main() {
     float negMaxAcc = -1;
     
     sf::RenderWindow window(sf::VideoMode(800, 800), "ScrumBums SFML: Look it works!");
-    sf::CircleShape shape(30.f);
-    shape.setFillColor(sf::Color::Green);
+    sf::CircleShape shape(80.f);
+    shape.setFillColor(sf::Color::Red);
     
     while (window.isOpen()) {
         sf::Event event;
@@ -42,6 +42,12 @@ int main() {
                     if (event.key.code == sf::Keyboard::Down) {
                         movD = true;
                         movU = false;
+                    }
+                    
+                    if (event.key.code == sf::Keyboard::C) {
+                        shape.setPosition(window.getSize().x / 2 - shape.getRadius(),
+                                          window.getSize().y / 2 - shape.getRadius());
+                    
                     }
                     break;
                 case sf::Event::KeyReleased:
@@ -81,15 +87,46 @@ int main() {
             else
                 velocity.x = negMaxAcc;
         }
-        else {
-            velocity.x = 0;
+//        else {
+//            velocity.x = 0;
+//            velocity.y = 0;
+//        }
+        
+        if (shape.getPosition().x < 0) {
+            velocity.x = 0 - velocity.x;
             velocity.y = 0;
+            
+            shape.setPosition(0, shape.getPosition().y);
+        }
+        
+        if (shape.getPosition().y < 0) {
+            velocity.x = 0;
+            velocity.y = 0 - velocity.y;
+            
+            shape.setPosition(shape.getPosition().x, 0);
+        }
+        
+        if (shape.getPosition().x + shape.getRadius() * 2 > window.getSize().x) {
+            velocity.x = 0 - velocity.x;
+            velocity.y = 0;
+            
+            shape.setPosition(window.getSize().x - shape.getRadius() * 2, shape.getPosition().y);
+        }
+        
+        if (shape.getPosition().y + shape.getRadius() * 2 > window.getSize().y) {
+            velocity.x = 0;
+            velocity.y = 0 - velocity.y;
+            
+            shape.setPosition(shape.getPosition().x, window.getSize().y - shape.getRadius() * 2);
         }
         
         shape.move(velocity);
         window.clear();
         window.draw(shape);
         window.display();
+        
+//         * 2
+//        std::cout<<shape.getPosition().x << "____"  << shape.getPosition().y << std::endl;
     }
     
     return 0;
