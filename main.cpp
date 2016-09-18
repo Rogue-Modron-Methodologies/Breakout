@@ -14,7 +14,7 @@ int main() {
     float negMaxAcc = -1;
     
     sf::RenderWindow window(sf::VideoMode(800, 800), "ScrumBums SFML: Look it works!");
-    sf::CircleShape shape(80.f);
+    sf::CircleShape shape(40.f);
     shape.setFillColor(sf::Color::Red);
     
     while (window.isOpen()) {
@@ -93,30 +93,19 @@ int main() {
 //        }
         
         if (shape.getPosition().x < 0) {
-            velocity.x = 0 - velocity.x;
-            velocity.y = 0;
-            
+            velocity.x = 0 - velocity.x;     
             shape.setPosition(0, shape.getPosition().y);
-        }
-        
+        }       
         if (shape.getPosition().y < 0) {
-            velocity.x = 0;
-            velocity.y = 0 - velocity.y;
-            
+            velocity.y = 0 - velocity.y;    
             shape.setPosition(shape.getPosition().x, 0);
-        }
-        
+        }       
         if (shape.getPosition().x + shape.getRadius() * 2 > window.getSize().x) {
-            velocity.x = 0 - velocity.x;
-            velocity.y = 0;
-            
+            velocity.x = 0 - velocity.x;          
             shape.setPosition(window.getSize().x - shape.getRadius() * 2, shape.getPosition().y);
-        }
-        
+        }       
         if (shape.getPosition().y + shape.getRadius() * 2 > window.getSize().y) {
-            velocity.x = 0;
             velocity.y = 0 - velocity.y;
-            
             shape.setPosition(shape.getPosition().x, window.getSize().y - shape.getRadius() * 2);
         }
         
