@@ -125,7 +125,6 @@ int main() {
         window.draw(shape);
         window.display();
         
-//         * 2
 //        std::cout<<shape.getPosition().x << "____"  << shape.getPosition().y << std::endl;
     }
     
