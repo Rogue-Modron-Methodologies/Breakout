@@ -37,7 +37,9 @@ public:
     
     Ball();
     
-    void updatePostition(Ball );
+    sf::CircleShape getBall() { return shape; }
+    
+    void updatePosition(Ball ball);
     
     //TO BE DETERMINED IF BALL CLASS HANDLES THE EVENTS
 //    void setMovR(bool movR) { this->movR = movR; }
@@ -50,14 +52,18 @@ public:
 //    bool getMovU() { return movU; }
 //    bool getMovD() { return movD; }
     
-    float getRadius() { return radius; }
+    float getRadius() { return shape.getRadius(); }
     
     void setVelocityY(float y) { velocity.y = y; }
     void setVelocityX(float x) { velocity.x = x; }
+    void setPosition(float x, float y);
     
     sf::Vector2f getVelocity() { return velocity; }
-    sf::Vector2f getPostition() { return shape.getPosition(); }
+    sf::Vector2f getPosition() { return shape.getPosition(); }
     
+    float getPosMaxAcc() { return posMaxAcc; }
+    float getNegMaxAcc() { return negMaxAcc; }
+    float getAcceleration() { return acceleration; }
     
 };
 
