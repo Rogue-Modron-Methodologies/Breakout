@@ -10,16 +10,16 @@
 		2BB662E71D8DEFC800DD4B24 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BB662E61D8DEFC800DD4B24 /* main.cpp */; };
 		2BB662F71D8DF29600DD4B24 /* Frameworks in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB662F61D8DF29600DD4B24 /* Frameworks */; };
 		2BB662F91D8DFF8A00DD4B24 /* rab.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB662F81D8DFF8A00DD4B24 /* rab.png */; };
-		2BB663451D8F1DDD00DD4B24 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BB663431D8F1DDD00DD4B24 /* Ball.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B8D473A1D9B3520003E8568 /* DrawableObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DrawableObject.h; path = ../../../DrawableObject.h; sourceTree = "<group>"; };
+		2B8D473B1D9B3B0C003E8568 /* MovableObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MovableObject.h; path = ../../../MovableObject.h; sourceTree = "<group>"; };
 		2BB662DE1D8DEFC800DD4B24 /* Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breakout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB662E21D8DEFC800DD4B24 /* Breakout-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Breakout-Info.plist"; sourceTree = "<group>"; };
 		2BB662E61D8DEFC800DD4B24 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../main.cpp; sourceTree = "<group>"; };
 		2BB662F61D8DF29600DD4B24 /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Frameworks; path = ../Frameworks; sourceTree = "<group>"; };
 		2BB662F81D8DFF8A00DD4B24 /* rab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rab.png; sourceTree = "<group>"; };
-		2BB663431D8F1DDD00DD4B24 /* Ball.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Ball.cpp; path = ../../../Ball.cpp; sourceTree = "<group>"; };
 		2BB663441D8F1DDD00DD4B24 /* Ball.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Ball.hpp; path = ../../../Ball.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +56,8 @@
 			isa = PBXGroup;
 			children = (
 				2BB663441D8F1DDD00DD4B24 /* Ball.hpp */,
-				2BB663431D8F1DDD00DD4B24 /* Ball.cpp */,
+				2B8D473A1D9B3520003E8568 /* DrawableObject.h */,
+				2B8D473B1D9B3B0C003E8568 /* MovableObject.h */,
 				2BB662E61D8DEFC800DD4B24 /* main.cpp */,
 				2BB662E81D8DEFC800DD4B24 /* Resources */,
 				2BB662E11D8DEFC800DD4B24 /* Supporting Files */,
@@ -165,7 +166,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BB663451D8F1DDD00DD4B24 /* Ball.cpp in Sources */,
 				2BB662E71D8DEFC800DD4B24 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
