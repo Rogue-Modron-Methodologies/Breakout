@@ -18,8 +18,9 @@ class Game{
 	Ball *ball;
 	Paddle *paddle;
 	sf::RenderWindow window;
+	//Table table;
+	//ResourceManager<sf::Texture> txtMngr;
 	
-
 public:
 	Game() : window(sf::VideoMode(800, 800), "Breakout") {
 		movR = movL = movU = movD = false;
@@ -28,28 +29,24 @@ public:
 		ball->changeVelocity(Direction::right);
 		ball->changeVelocity(Direction::up);
 		paddle = new Paddle("paddle.png", 1.f, window);
-
 	}
 
 	int playGame(){
 
 		window.setFramerateLimit(60);
-
+		sf::Event event;
 		while (window.isOpen()) {
-			sf::Event event;
 			while (window.pollEvent(event)) {
 				handleUserEvents(event);
 			}
-
 			moveGameObjects();		
 			window.clear();
 			drawGame();
 			window.display();
 		}
-
 		return 0;
 	}
-
+private:
 	/*
 	Handles user input by matching keyboard events
 	with corresponding actions
@@ -93,11 +90,19 @@ public:
 		else if (!movL || !movR)
 			paddle->changeVelocity(Direction::stop);
 
+		checkCollisions();
+		paddle->move();
+		ball->move();
+	}
+
+	void checkCollisions() {
 		ball->handleBounds(window, true);
 		paddle->handleBounds(window, false);
 
-		paddle->move();
-		ball->move();
+		if (ball->getObjectPosition().y >= paddle->getObjectPosition().y) {
+			ball->handleBounds(paddle, true);
+		}
+
 	}
 
 	void drawGame() {

@@ -12,7 +12,7 @@
 
 enum class Direction{ down = 0, up = 1, right = 2, left = 3, stop = 4 };
 
-class MovableObject : DrawableObject {
+class MovableObject : public DrawableObject {
     sf::Vector2f velocity;
     float acceleration;
     float posMaxAcc;
@@ -96,6 +96,17 @@ public:
 			velocity.y = rebound ? 0 - velocity.y : 0;
         }
     }
+
+	/*
+	This method handles the bounds of the sprite
+	*/
+	void handleBounds(DrawableObject *other, bool rebound) {
+		// This collides with top of other
+		if (other->getGlobalBounds().intersects(this->getGlobalBounds())) {
+		//	this->velocity.x = rebound ? 0 - velocity.x : 0;
+			this->velocity.y = rebound ? 0 - velocity.y : 0;
+		}
+	}
     
     void drawObject(sf::RenderWindow &window) { draw(window); }
     

@@ -34,15 +34,12 @@ public:
     }
 
     void draw(sf::RenderWindow &window) { window.draw(*sprite); }
-    
+	sf::Vector2f getPosition() { return sprite->getPosition(); }
+	unsigned getWidth() { return texture.getSize().x; }
+	unsigned getHeight() { return texture.getSize().y; }
+	sf::FloatRect getGlobalBounds() { return sprite->getGlobalBounds(); }
 protected:
-    void move(sf::Vector2f velocity) { sprite->move(velocity); }
-    
-    unsigned getWidth() { return texture.getSize().x; }
-	unsigned getHeight() { return texture.getSize().y;}
-    
-    sf::Vector2f getPosition() { return sprite->getPosition(); }
-    
+    void move(sf::Vector2f velocity) { sprite->move(velocity); }   
     void setPosition(sf::Vector2f position) { sprite->setPosition(position); }
     void setPosition(float x, float y) { sprite->setPosition(x, y); }
     
