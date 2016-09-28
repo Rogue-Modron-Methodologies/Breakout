@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Ball.h" />
+    <ClInclude Include="..\..\Block.h" />
     <ClInclude Include="..\..\Class.h" />
     <ClInclude Include="..\..\DrawableObject.h" />
     <ClInclude Include="..\..\Game.h" />
