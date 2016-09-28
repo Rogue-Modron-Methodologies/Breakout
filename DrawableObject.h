@@ -23,8 +23,8 @@ public:
      */
     DrawableObject(std::string file_name) {
         sprite = new sf::Sprite();
-        if (!texture.loadFromFile(file_name))
-            return EXIT_FAILURE;
+		if (!texture.loadFromFile(file_name))
+			;// return EXIT_FAILURE;
         else
             sprite->setTexture(texture);
     };
@@ -38,8 +38,8 @@ public:
 protected:
     void move(sf::Vector2f velocity) { sprite->move(velocity); }
     
-    float getWidth() { return texture.getSize().x; }
-    float getHeight() { return texture.getSize().y;}
+    unsigned getWidth() { return texture.getSize().x; }
+	unsigned getHeight() { return texture.getSize().y;}
     
     sf::Vector2f getPosition() { return sprite->getPosition(); }
     

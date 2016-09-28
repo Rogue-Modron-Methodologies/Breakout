@@ -79,19 +79,19 @@ public:
     void handleBounds(sf::RenderWindow &window) {
         if (getPosition().x < 0) {
             velocity.x = 0 - velocity.x;
-            setPosition(0, getObjectPosition().y);
+            setPosition(0, (float)getObjectPosition().y);
         }
         if (getPosition().y < 0) {
             velocity.y = 0 - velocity.y;
-            setPosition(getObjectPosition().x, 0);
+            setPosition((float)getObjectPosition().x, 0);
         }
-        if (getObjectPosition().x + getWidth() > window.getSize().x) {
+        if (getObjectPosition().x + getWidth() > (float)window.getSize().x) {
             velocity.x = 0 - velocity.x;
-            setPosition(window.getSize().x - getWidth(), getObjectPosition().y);
+            setPosition((float)window.getSize().x - getWidth(), (float)getObjectPosition().y);
         }
-        if (getObjectPosition().y + getWidth() > window.getSize().y) {
+        if (getObjectPosition().y + getWidth() > (float)window.getSize().y) {
             velocity.y = 0 - velocity.y;
-            setPosition(getObjectPosition().x, window.getSize().y - getWidth());
+            setPosition((float)getObjectPosition().x, (float)window.getSize().y - getWidth());
         }
     }
     
@@ -100,8 +100,8 @@ public:
     void setObjectPosition(float x, float y) {
         setPosition(x , y);
     };
-    float getObjectHeight() { return getHeight(); }
-    float getObjectWidth() { return getWidth(); }
+    float getObjectHeight() { return (float)getHeight(); }
+    float getObjectWidth() { return (float)getWidth(); }
     
     sf::Vector2f getVelocity() { return velocity; }
     sf::Vector2f getObjectPosition() { return getPosition(); }

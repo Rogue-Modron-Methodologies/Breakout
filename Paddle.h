@@ -15,8 +15,8 @@ class Paddle : public MovableObject {
 public:
     Paddle(std::string file_name, float acc, sf::RenderWindow &window) : MovableObject(file_name) {
         acceleration = acc;
-        setObjectPosition(window.getSize().x / 2 - getObjectWidth() / 2,
-                          window.getSize().y * (3.0/4.0) - getObjectHeight() / 2);
+        setObjectPosition((float)window.getSize().x / 2 - getObjectWidth() / 2,
+						(float)window.getSize().y * (3.0f/4.0f) - getObjectHeight() / 2);
     };
     void move() { moveObject(); }
     
