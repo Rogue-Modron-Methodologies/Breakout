@@ -158,6 +158,7 @@
     <ClInclude Include="..\..\Ball.h" />
     <ClInclude Include="..\..\Class.h" />
     <ClInclude Include="..\..\DrawableObject.h" />
+    <ClInclude Include="..\..\Game.h" />
     <ClInclude Include="..\..\MovableObject.h" />
     <ClInclude Include="..\..\Paddle.h" />
   </ItemGroup>
