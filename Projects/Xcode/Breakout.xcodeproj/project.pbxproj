@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B8D476C1D9B7E27003E8568 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D476B1D9B7E27003E8568 /* ball.png */; };
+		2B8D476E1D9B9906003E8568 /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D476D1D9B9906003E8568 /* paddle.png */; };
 		2BB662E71D8DEFC800DD4B24 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BB662E61D8DEFC800DD4B24 /* main.cpp */; };
 		2BB662F71D8DF29600DD4B24 /* Frameworks in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB662F61D8DF29600DD4B24 /* Frameworks */; };
 		2BB662F91D8DFF8A00DD4B24 /* rab.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB662F81D8DFF8A00DD4B24 /* rab.png */; };
@@ -15,6 +17,9 @@
 /* Begin PBXFileReference section */
 		2B8D473A1D9B3520003E8568 /* DrawableObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DrawableObject.h; path = ../../../DrawableObject.h; sourceTree = "<group>"; };
 		2B8D473B1D9B3B0C003E8568 /* MovableObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MovableObject.h; path = ../../../MovableObject.h; sourceTree = "<group>"; };
+		2B8D473C1D9B698E003E8568 /* Paddle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Paddle.h; path = ../../../Paddle.h; sourceTree = "<group>"; };
+		2B8D476B1D9B7E27003E8568 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
+		2B8D476D1D9B9906003E8568 /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
 		2BB662DE1D8DEFC800DD4B24 /* Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breakout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB662E21D8DEFC800DD4B24 /* Breakout-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Breakout-Info.plist"; sourceTree = "<group>"; };
 		2BB662E61D8DEFC800DD4B24 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../main.cpp; sourceTree = "<group>"; };
@@ -55,9 +60,10 @@
 		2BB662E01D8DEFC800DD4B24 /* Breakout */ = {
 			isa = PBXGroup;
 			children = (
-				2BB663441D8F1DDD00DD4B24 /* Ball.hpp */,
 				2B8D473A1D9B3520003E8568 /* DrawableObject.h */,
 				2B8D473B1D9B3B0C003E8568 /* MovableObject.h */,
+				2BB663441D8F1DDD00DD4B24 /* Ball.hpp */,
+				2B8D473C1D9B698E003E8568 /* Paddle.h */,
 				2BB662E61D8DEFC800DD4B24 /* main.cpp */,
 				2BB662E81D8DEFC800DD4B24 /* Resources */,
 				2BB662E11D8DEFC800DD4B24 /* Supporting Files */,
@@ -76,6 +82,8 @@
 		2BB662E81D8DEFC800DD4B24 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2B8D476B1D9B7E27003E8568 /* ball.png */,
+				2B8D476D1D9B9906003E8568 /* paddle.png */,
 				2BB662F81D8DFF8A00DD4B24 /* rab.png */,
 			);
 			name = Resources;
@@ -139,6 +147,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8D476C1D9B7E27003E8568 /* ball.png in Resources */,
+				2B8D476E1D9B9906003E8568 /* paddle.png in Resources */,
 				2BB662F91D8DFF8A00DD4B24 /* rab.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -11,15 +11,21 @@
 #include "DrawableObject.h"
 
 class MovableObject : DrawableObject {
-    
-    sf::Vector2f velocity = { 0, 0 };
-    float acceleration = .1f;
-    float posMaxAcc = 1;
-    float negMaxAcc = -1;
-    
 public:
-    MovableObject(double rad, sf::Vector2f velocity = { 0, 0 }, float acceleration = .1f,
-                  float posMaxAcc = 1, float negMaxAcc = -1) : DrawableObject(rad) {
+    sf::Vector2f velocity;
+    float acceleration;
+    float posMaxAcc;
+    float negMaxAcc;
+    
+//public:
+    
+    MovableObject(std::string file_path = "",
+                  sf::Vector2f velocity = { 0, 0 },
+                  float acceleration = .1f,
+                  float posMaxAcc = 1,
+                  float negMaxAcc = -1
+                  ) : DrawableObject(file_path)
+    {
         this->velocity = velocity;
         this->acceleration = acceleration;
         this->posMaxAcc = posMaxAcc;
@@ -66,9 +72,9 @@ public:
     }
     
     /*
-     This method handles the bounds of the ball
-     and ensures that the ball stays within the size of
-     window.
+     This method handles the bounds of the sprite
+     and ensures that the sprite stays within the size of
+     window passed
      */
     void handleBounds(sf::RenderWindow &window) {
         if (getPosition().x < 0) {
@@ -79,23 +85,23 @@ public:
             velocity.y = 0 - velocity.y;
             setPosition(getObjectPosition().x, 0);
         }
-        if (getObjectPosition().x + getObjectRadius() * 2 > window.getSize().x) {
+        if (getObjectPosition().x + getWidth() > window.getSize().x) {
             velocity.x = 0 - velocity.x;
-            setPosition(window.getSize().x - getObjectRadius() * 2, getObjectPosition().y);
+            setPosition(window.getSize().x - getWidth(), getObjectPosition().y);
         }
-        if (getObjectPosition().y + getObjectRadius() * 2 > window.getSize().y) {
+        if (getObjectPosition().y + getWidth() > window.getSize().y) {
             velocity.y = 0 - velocity.y;
-            setPosition(getObjectPosition().x, window.getSize().y - getObjectRadius() * 2);
+            setPosition(getObjectPosition().x, window.getSize().y - getWidth());
         }
     }
     
     void drawObject(sf::RenderWindow &window) { draw(window); }
     
-    float getObjectRadius() { return getRadius(); }
-    
-    void setVelocityY(float y) { velocity.y = y; }
-    void setVelocityX(float x) { velocity.x = x; }
-    void setObjectPosition(float x, float y);
+    void setObjectPosition(float x, float y) {
+        setPosition(x , y);
+    };
+    float getObjectHeight() { return getHeight(); }
+    float getObjectWidth() { return getWidth(); }
     
     sf::Vector2f getVelocity() { return velocity; }
     sf::Vector2f getObjectPosition() { return getPosition(); }
@@ -103,7 +109,7 @@ public:
     float getPosMaxAcc() { return posMaxAcc; }
     float getNegMaxAcc() { return negMaxAcc; }
     float getAcceleration() { return acceleration; }
-
+    
     
 };
 

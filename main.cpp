@@ -134,17 +134,20 @@
 #include <iostream>
 #include <string>
 #include <Ball.hpp>
+#include <Paddle.h>
 
 //Function declarations
 void handleUserEvents(sf::Event event);
 void handleBallVelocity();
 void handleBallBounds();
+void handlePaddleMovement();
 
 //Temporarily make variables global, these will eventually be encapsulated within
 //a Ball Class
 bool movR, movL, movU, movD;
 //Initalize a new ball class
-Ball *ball = new Ball(40);
+Ball *ball;
+Paddle *paddle;
 
 sf::RenderWindow window(sf::VideoMode(800, 800), "ScrumBums SFML: Look it works!");
 
@@ -152,6 +155,8 @@ sf::RenderWindow window(sf::VideoMode(800, 800), "ScrumBums SFML: Look it works!
 int main() {
     
     movR = movL = movU = movD = false;
+    ball = new Ball("ball.png", window);
+    paddle = new Paddle("paddle.png", 1.f, window);
     
     while (window.isOpen()) {
         sf::Event event;
@@ -159,19 +164,16 @@ int main() {
             handleUserEvents(event);
         }
         
+        handlePaddleMovement();
         handleBallVelocity();
         
-        //        else {
-        //            velocity.x = 0;
-        //            velocity.y = 0;
-        //        }
-        
         ball->handleBounds(window);
+        paddle->handleBounds(window);
         
-//        handleBallBounds();
-        
+        paddle->move();
         ball->move();
         window.clear();
+        paddle->drawObject(window);
         ball->drawObject(window);
         window.display();
         
@@ -179,6 +181,23 @@ int main() {
     }
     
     return 0;
+}
+
+/*
+ GAME CLASS will handle all the user inputs
+ if keyboards toggled handles paddle movements
+ */
+void handlePaddleMovement() {
+    //left key is held, move at a constant speed towards left
+    if (movL) {
+        paddle->velocity.x = -paddle->acceleration;
+    }
+    else if (movR) {
+        paddle->velocity.x = paddle->acceleration;
+    }
+    else if (!movL || !movR) {
+        paddle->velocity.x = 0;
+    }
 }
 
 /*

@@ -12,30 +12,39 @@
 
 class DrawableObject {
     
-    sf::CircleShape *shape;
+//    sf::CircleShape *shape;
+    sf::Sprite *sprite;
+    sf::Texture texture;
+    
 public:
-    DrawableObject(double rad) {
-        shape = new sf::CircleShape(rad);
+    /*
+     Pass a file name to this constructor to be loading as a sprite
+     if the file cannot be found the system will exit
+     */
+    DrawableObject(std::string file_name) {
+        sprite = new sf::Sprite();
+        if (!texture.loadFromFile(file_name))
+            return EXIT_FAILURE;
+        else
+            sprite->setTexture(texture);
     };
-    
-    DrawableObject() { delete shape; }
 
-    void draw(sf::RenderWindow &window) {
-        window.draw(*shape);
+    ~DrawableObject() {
+        delete sprite;
     }
-    
-    
+
+    void draw(sf::RenderWindow &window) { window.draw(*sprite); }
     
 protected:
-    void move(sf::Vector2f velocity) {
-        shape->move(velocity);
-    }
+    void move(sf::Vector2f velocity) { sprite->move(velocity); }
     
-    float getRadius() { return shape->getRadius(); }
+    float getWidth() { return texture.getSize().x; }
+    float getHeight() { return texture.getSize().y;}
     
-    sf::Vector2f getPosition() { return shape->getPosition(); }
-    void setPosition(sf::Vector2f position) { shape->setPosition(position); }
-    void setPosition(float x, float y) { shape->setPosition(x, y); }
+    sf::Vector2f getPosition() { return sprite->getPosition(); }
+    
+    void setPosition(sf::Vector2f position) { sprite->setPosition(position); }
+    void setPosition(float x, float y) { sprite->setPosition(x, y); }
     
 };
 
