@@ -21,8 +21,6 @@ public:
     void move() { moveObject(); }
     
     //setters and getters for all the attribuites of Movable objects would go here if made private
-    
-    
 };
 
 

@@ -3,7 +3,7 @@
 //  Breakout
 //
 //  Created by Edward on 9/18/16.
-//  Copyright © 2016 Edward. All rights reserved.
+//  Copyright ï¿½ 2016 Edward. All rights reserved.
 //
 
 #ifndef Game_h
@@ -11,6 +11,7 @@
 
 #include "Ball.h"
 #include "Paddle.h"
+#include "Table.h"
 
 class Game{
 
@@ -18,13 +19,14 @@ class Game{
 	Ball *ball;
 	Paddle *paddle;
 	sf::RenderWindow window;
-	//Table table;
+	Table *table;
 	//ResourceManager<sf::Texture> txtMngr;
 	
 public:
 	Game() : window(sf::VideoMode(800, 800), "Breakout") {
 		movR = movL = movU = movD = false;
 		ball = new Ball("ball.png", window);
+        table = new Table(3, 3, "paddle.png", window);
 		// Will need a better way to initialize the balls velocity
 		ball->changeVelocity(Direction::right);
 		ball->changeVelocity(Direction::up);
@@ -106,6 +108,7 @@ private:
 	}
 
 	void drawGame() {
+        table->drawObjects(window);
 		paddle->drawObject(window);
 		ball->drawObject(window);
 	}

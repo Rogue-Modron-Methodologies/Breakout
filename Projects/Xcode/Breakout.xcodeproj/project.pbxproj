@@ -7,25 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B8C10701D9D768D00D37A74 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2B8C106D1D9D768D00D37A74 /* main.cpp */; };
 		2B8D476C1D9B7E27003E8568 /* ball.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D476B1D9B7E27003E8568 /* ball.png */; };
 		2B8D476E1D9B9906003E8568 /* paddle.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B8D476D1D9B9906003E8568 /* paddle.png */; };
-		2BB662E71D8DEFC800DD4B24 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2BB662E61D8DEFC800DD4B24 /* main.cpp */; };
 		2BB662F71D8DF29600DD4B24 /* Frameworks in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BB662F61D8DF29600DD4B24 /* Frameworks */; };
 		2BB662F91D8DFF8A00DD4B24 /* rab.png in Resources */ = {isa = PBXBuildFile; fileRef = 2BB662F81D8DFF8A00DD4B24 /* rab.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B8D473A1D9B3520003E8568 /* DrawableObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = DrawableObject.h; path = ../../../DrawableObject.h; sourceTree = "<group>"; };
-		2B8D473B1D9B3B0C003E8568 /* MovableObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MovableObject.h; path = ../../../MovableObject.h; sourceTree = "<group>"; };
-		2B8D473C1D9B698E003E8568 /* Paddle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Paddle.h; path = ../../../Paddle.h; sourceTree = "<group>"; };
+		2B8C10681D9D768D00D37A74 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = ../../../Ball.h; sourceTree = "<group>"; };
+		2B8C10691D9D768D00D37A74 /* Block.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Block.h; path = ../../../Block.h; sourceTree = "<group>"; };
+		2B8C106A1D9D768D00D37A74 /* Class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Class.h; path = ../../../Class.h; sourceTree = "<group>"; };
+		2B8C106B1D9D768D00D37A74 /* DrawableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawableObject.h; path = ../../../DrawableObject.h; sourceTree = "<group>"; };
+		2B8C106C1D9D768D00D37A74 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Game.h; path = ../../../Game.h; sourceTree = "<group>"; };
+		2B8C106D1D9D768D00D37A74 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../main.cpp; sourceTree = "<group>"; };
+		2B8C106E1D9D768D00D37A74 /* MovableObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MovableObject.h; path = ../../../MovableObject.h; sourceTree = "<group>"; };
+		2B8C106F1D9D768D00D37A74 /* Paddle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Paddle.h; path = ../../../Paddle.h; sourceTree = "<group>"; };
+		2B8C10711D9D769A00D37A74 /* Table.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Table.h; path = ../../../Table.h; sourceTree = "<group>"; };
 		2B8D476B1D9B7E27003E8568 /* ball.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ball.png; sourceTree = "<group>"; };
 		2B8D476D1D9B9906003E8568 /* paddle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paddle.png; sourceTree = "<group>"; };
 		2BB662DE1D8DEFC800DD4B24 /* Breakout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Breakout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BB662E21D8DEFC800DD4B24 /* Breakout-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Breakout-Info.plist"; sourceTree = "<group>"; };
-		2BB662E61D8DEFC800DD4B24 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../../../main.cpp; sourceTree = "<group>"; };
 		2BB662F61D8DF29600DD4B24 /* Frameworks */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Frameworks; path = ../Frameworks; sourceTree = "<group>"; };
 		2BB662F81D8DFF8A00DD4B24 /* rab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rab.png; sourceTree = "<group>"; };
-		2BB663441D8F1DDD00DD4B24 /* Ball.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Ball.hpp; path = ../../../Ball.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +64,15 @@
 		2BB662E01D8DEFC800DD4B24 /* Breakout */ = {
 			isa = PBXGroup;
 			children = (
-				2B8D473A1D9B3520003E8568 /* DrawableObject.h */,
-				2B8D473B1D9B3B0C003E8568 /* MovableObject.h */,
-				2BB663441D8F1DDD00DD4B24 /* Ball.hpp */,
-				2B8D473C1D9B698E003E8568 /* Paddle.h */,
-				2BB662E61D8DEFC800DD4B24 /* main.cpp */,
+				2B8C10681D9D768D00D37A74 /* Ball.h */,
+				2B8C10691D9D768D00D37A74 /* Block.h */,
+				2B8C10711D9D769A00D37A74 /* Table.h */,
+				2B8C106A1D9D768D00D37A74 /* Class.h */,
+				2B8C106B1D9D768D00D37A74 /* DrawableObject.h */,
+				2B8C106C1D9D768D00D37A74 /* Game.h */,
+				2B8C106D1D9D768D00D37A74 /* main.cpp */,
+				2B8C106E1D9D768D00D37A74 /* MovableObject.h */,
+				2B8C106F1D9D768D00D37A74 /* Paddle.h */,
 				2BB662E81D8DEFC800DD4B24 /* Resources */,
 				2BB662E11D8DEFC800DD4B24 /* Supporting Files */,
 			);
@@ -176,7 +184,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BB662E71D8DEFC800DD4B24 /* main.cpp in Sources */,
+				2B8C10701D9D768D00D37A74 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
