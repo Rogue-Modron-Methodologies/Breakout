@@ -98,9 +98,9 @@ private:
 		else if (!movL || !movR)
 			paddle->changeVelocity(Direction::stop);
 
-		checkCollisions();
 		paddle->move();
 		ball->move();
+		checkCollisions();
 	}
 
 	void checkCollisions() {

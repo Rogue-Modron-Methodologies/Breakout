@@ -102,7 +102,16 @@ public:
 	*/
 	void handleBounds(DrawableObject *other, bool rebound) {
 		// This collides with top of other
-		if (other->getGlobalBounds().intersects(this->getGlobalBounds())) {
+		if (this->getGlobalBounds().intersects(other->getGlobalBounds())) {
+			if (this->velocity.x > 0)
+				std::cout << "Right and ";
+			else
+				std::cout << "Left and ";
+
+			if (this->velocity.y > 0)
+				std::cout << "Down\n";
+			else
+				std::cout << "Up\n";
 		//	this->velocity.x = rebound ? 0 - velocity.x : 0;
 			this->velocity.y = rebound ? 0 - velocity.y : 0;
 		}
