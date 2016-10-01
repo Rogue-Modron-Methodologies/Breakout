@@ -18,6 +18,7 @@ private:
     const float BLOCK_HEIGHT = 32;
     Block*** table;
     int row, column;
+    int num_blocks = 0;
     
 public:
     Table(int row, int column, std::string file_path, sf::RenderWindow &window) {
@@ -31,7 +32,8 @@ public:
     
     ~Table() {
         for(int i = 0; i < row ; ++i)
-            delete [] table[i];
+            for(int k = 0; k < column ; ++k)
+                delete [] table[i][k];
         delete [] table;
     }
     
@@ -42,14 +44,15 @@ public:
         
         for (int i = 0; i < row ; i++) {
             for (int k = 0; k < column; k++) {
+                ++num_blocks;
                 table[i][k] = new Block(file_path, init_pos);
                 //now add the width of block to X
-                init_pos.x += BLOCK_WIDTH;
+                init_pos.x += table[i][k]->getWidth();
             }
             //reset X position
             //now add the height of block to Y
             init_pos.x = PADDING;
-            init_pos.y += BLOCK_HEIGHT;
+            init_pos.y += table[i][i]->getHeight();
         }
     }
     
