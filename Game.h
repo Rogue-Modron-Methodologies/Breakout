@@ -33,6 +33,12 @@ public:
 		paddle = new Paddle("paddle.png", 1.f, window);
 	}
 
+	~Game() {
+		delete ball;
+		delete paddle;
+		delete table;
+	}
+
 	int playGame(){
 
 		window.setFramerateLimit(60);
@@ -92,19 +98,16 @@ private:
 		else if (!movL || !movR)
 			paddle->changeVelocity(Direction::stop);
 
-		checkCollisions();
 		paddle->move();
 		ball->move();
+		checkCollisions();
 	}
 
 	void checkCollisions() {
 		ball->handleBounds(window, true);
 		paddle->handleBounds(window, false);
 
-		if (ball->getObjectPosition().y >= paddle->getObjectPosition().y) {
-			ball->handleBounds(paddle, true);
-		}
-
+		ball->handleBounds(paddle, true);
 	}
 
 	void drawGame() {
